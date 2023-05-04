@@ -1,16 +1,19 @@
+// router
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
 // pages
 import Product from "./pages/Product";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Account from "./pages/Account";
-import Section from "./components/Section";
+import Home from "./pages/Home";
+// hooks
 import { useEffect, useState } from "react";
+// components
+import Header from "./components/Header";
 import Spinner from "./components/Spinner";
 
 function App() {
-  // Loading
+  // Loading tracker
   const [isLoading, setIsLoading] = useState(true);
   // product
   const [products, setProducts] = useState([]);
@@ -27,9 +30,11 @@ function App() {
     { label: "Sorted by Category", value: "category", id: 5 },
   ];
   const [value, setValue] = useState("default");
+  // handle option selected
   const handleSelecteChage = (e) => {
     setValue(e.target.value);
   };
+  // using useEffect for tracking the select options
   useEffect(() => {
     if (value === "price") {
       fetch("https://fakestoreapi.com/products")
@@ -83,11 +88,11 @@ function App() {
             <Spinner />
           ) : (
             <Routes>
+              <Route path="/" exact element={<Home products={products} />} />
               <Route
-                path="/"
-                exact
+                path="/product"
                 element={
-                  <Section
+                  <Product
                     products={products}
                     options={options}
                     value={value}
@@ -95,7 +100,6 @@ function App() {
                   />
                 }
               />
-              <Route path="/product" element={<Product />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/account" element={<Account />} />

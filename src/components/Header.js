@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 
 function Header() {
   return (
-    <header className="header">
+    <header className="container header">
       <Logo />
       <Navbar />
     </header>

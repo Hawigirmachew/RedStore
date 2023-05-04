@@ -1,80 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+:root {
+  --text-color: #555;
+  --text-color-2: #8a8a8a;
+  --highlight-color: #ff523b;
+  --dark-highlight-color: #563434;
+  --bg-color: #ffd6d6;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 /* global */
-li{
+li {
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-
-
 /* header section */
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding: 0 100px;
 }
-.logo{
+.logo {
   max-width: 250px;
   height: 60px;
 }
-.navList{
-   display: flex;
-   gap: 0.9rem;
-   font-size: 1.2rem;
+.navList {
+  display: flex;
+  gap: 0.9rem;
+  font-size: 1.2rem;
+}
+.navItem {
+  font-weight: 400;
+}
+.cart-img {
+  width: 24px;
+  height: 24px;
 }
 
 /* main */
-
-.main{
+.container {
   max-width: 1400px;
   width: 100%;
   margin: 1rem auto;
-  padding-top: 150px;
 }
-/* section starts */
-.section--1{
+.small-container {
+  max-width: 1080px;
+  width: 100%;
+  margin: 5rem auto;
+}
+
+/* home section starts */
+.home,
+.offer {
+  background: radial-gradient(#fff, var(--bg-color));
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+.col {
+  flex-basis: 50%;
+  min-width: 300px;
+}
+.col-1 h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  line-height: 60px;
+  margin: 24px 0;
+}
+.col-1 p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: var(--text-color-2);
+  line-height: 30px;
+}
+.col-2 img {
+  width: 100%;
+  padding: 50px 0;
+}
+.col-1 h2 {
+  font-weight: 400px;
+  font-size: 1rem;
+  padding-bottom: 50px;
+  color: var(--text-color-2);
+}
+.col-1 h3 {
+  font-size: 3.2rem;
+  line-height: 3.7rem;
+  margin-bottom: 20px;
+}
+.link {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 10px 30px;
+  background-color: var(--highlight-color);
+  color: white;
+
+  font-weight: 400;
+  border-radius: 30px;
+}
+.min-container {
+  margin: 3rem auto 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 1rem;
+}
+.min-container img {
+  max-width: 300px;
+  height: 400px;
+}
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400px;
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: var(--text-color);
+}
+.subtitle::after {
+  content: "";
+  position: absolute;
+  background-color: var(--highlight-color);
+  width: 100px;
+  height: 6px;
+  border-radius: 10px;
+  bottom: 0;
+  right: 45%;
+}
+.single-product-image {
+  height: 400px;
+}
+/* offer */
+.offer-img {
+  height: 600px;
+}
+/* testimony */
+.testimonies{
+  padding-top: 50px;
+}
+.testimony {
+  max-width: 400px;
+  /* height: 500px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.testimony-icon {
+  color: var(--highlight-color);
+  font-size: 1.8rem;
+}
+.testimony-desc {
+  font-weight: 400;
+  color: var(--text-color-2);
+  line-height: 30px;
+  text-align: center;
+  padding: 10px 0;
+}
+.testimony div{
+  margin-top: 10px;
+  text-align: center;
+}
+.testimony .testimony-img {
+  max-width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+/* product page starts */
+
+.section--1 {
   display: flex;
   justify-content: space-between;
 }
-.title{
+.title {
   font-size: 2rem;
   font-weight: 700;
 }
 
 /* con */
-.container{
+.product-container {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   align-content: center;
   justify-items: center;
 }
 /* card */
-.red{
-  color:red;
+.red {
+  color: red;
 }
-.card--img{
-  
+.card--img {
   background-color: silver;
-  max-width: 300px;
+  max-width: 237px;
   height: 400px;
 }
 
-
 /* spinner */
-.spinner{
+.spinner {
   display: flex;
   align-items: center;
   justify-content: center;
