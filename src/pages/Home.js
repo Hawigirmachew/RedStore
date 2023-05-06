@@ -10,7 +10,7 @@ import { FaArrowRight } from "react-icons/fa";
 // components
 import Spinner from "../components/Spinner";
 import Testimony from "../components/Testimony";
-function Home({ products,isLoading }) {
+function Home({ products,isLoading,handleAddToCart}) {
   return (
     <section>
       <div className="home">
@@ -51,17 +51,17 @@ function Home({ products,isLoading }) {
           {products &&
             products
               .slice(0, 4)
-              .map((product) => <Card key={product.id} product={product} />)}
+              .map((product) => <Card key={product.id} product={product} handleAddToCart={handleAddToCart}/>)}
         </div>
       </div>
 
-      <div className="small-container featuredProducts">
+      <div className="small-container latestProducts">
         <h2 className="subtitle">Latest Products</h2>
         <div className="product-container">
           {products &&
             products
               .slice(0, 8)
-              .map((product) => <Card key={product.id} product={product} />)}
+              .map((product) => <Card key={product.id} product={product} handleAddToCart={handleAddToCart}/>)}
         </div>
       </div>
       <div className="offer">

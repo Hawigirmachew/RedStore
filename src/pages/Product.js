@@ -2,10 +2,10 @@ import React from "react";
 import Dropdown from "../components/Dropdown";
 import Card from "../components/Card";
 
-function Product({ products, options, value, handleSelecteChage }) {
+function Product({ products, options, value, handleSelecteChage,handleAddToCart }) {
   return (
     <section className="section">
-      <div className="section--1">
+      <div className="container section--1">
         <h2 className="title">All Products</h2>
         <Dropdown
           handleSelecteChage={handleSelecteChage}
@@ -13,10 +13,11 @@ function Product({ products, options, value, handleSelecteChage }) {
           value={value}
         />
       </div>
-      <div className="product-container">
+      <div className="container product-container">
         {products &&
           products.map((product) => (
-            <Card key={product.id} product={product} />
+            <Card key={product.id} product={product} handleAddToCart={handleAddToCart} />
+            
           ))}
       </div>
     </section>

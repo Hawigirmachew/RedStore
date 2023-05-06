@@ -25,7 +25,7 @@ function Navbar({navRef}) {
           <Link to="/account">Account</Link>
         </li>
         <li className="navItem">
-          <Link to="/cart"><img src={cart} alt="cart" className="cart-img" /></Link>
+          <Link to="/cart"><img src={cart} alt="cart" className="add-cart-img" /></Link>
         </li>
         
       </ul>
