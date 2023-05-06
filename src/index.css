@@ -49,6 +49,14 @@ a {
   width: 24px;
   height: 24px;
 }
+.nav-btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  background-color: transparent;
+  display: none;
+}
 
 /* main */
 .container {
@@ -152,7 +160,7 @@ a {
   height: 600px;
 }
 /* testimony */
-.testimonies{
+.testimonies {
   padding-top: 50px;
 }
 .testimony {
@@ -176,7 +184,7 @@ a {
   text-align: center;
   padding: 10px 0;
 }
-.testimony div{
+.testimony div {
   margin-top: 10px;
   text-align: center;
 }
@@ -221,4 +229,110 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* media query */
+/* 1024px - 920px */
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
+  .product-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .testimony {
+    max-width: 350px;
+  }
+}
+/* 920 - 700px */
+@media screen and (max-width: 920px) {
+  .container {
+    max-width: 700px;
+  }
+  .min-container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+    align-items: center;
+    justify-items: center;
+  }
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .testimony {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header .navList {
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: 1s;
+    background-color:var(--bg-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 80px 0px rgb(0, 0, 0, 0.1);
+    z-index: 1;
+    transform: translateY(-10vh);
+  }
+  .nav-btn {
+    display: block;
+  }
+  .header .responsive-nav {
+    transform: translate(-120vh);
+  }
+  .nav-close-btn{
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+  }
+}
+/* 700 - 630px */
+@media screen and (max-width: 700px) {
+  .container {
+    max-width: 600px;
+    margin: 1rem;
+  }
+ 
+  .min-container {
+    column-gap: 0.5rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .container {
+    max-width: 400px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .min-container {
+    column-gap: 0.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+  .section--1 {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container{
+    max-width: 280px;
+  }
+   .col-1 h1{
+    font-size:2.1rem;
+    line-height: 1.9rem;
+   }
+   .col-1 p{
+    font-size:1.2rem
+   }
 }

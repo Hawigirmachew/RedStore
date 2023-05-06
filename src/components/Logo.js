@@ -1,7 +1,7 @@
 import logo from '../assets/redstore.png'
 
 function Logo() {
-  return <h1><img src={logo} alt="logo of red store" className='logo'/></h1>
+  return <><img src={logo} alt="logo of red store" className='logo'/></>
 }
 
 export default Logo

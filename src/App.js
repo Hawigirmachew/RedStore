@@ -88,7 +88,7 @@ function App() {
             <Spinner />
           ) : (
             <Routes>
-              <Route path="/" exact element={<Home products={products} />} />
+              <Route path="/" exact element={<Home products={products} isLoading={isLoading}/>} />
               <Route
                 path="/product"
                 element={

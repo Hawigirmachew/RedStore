@@ -7,8 +7,10 @@ import Card from "../components/Card";
 import testimonials from "../Utils/data";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+// components
+import Spinner from "../components/Spinner";
 import Testimony from "../components/Testimony";
-function Home({ products }) {
+function Home({ products,isLoading }) {
   return (
     <section>
       <div className="home">
@@ -33,11 +35,16 @@ function Home({ products }) {
         </div>
       </div>
       </div>
-      <div className="small-container min-container">
+     {
+      isLoading? <Spinner/>:
+      (
+        <div className="small-container min-container">
         {products.slice(14, 17).map((product) => (
           <img src={product.image} alt="images" />
         ))}
       </div>
+      )
+     }
       <div className="small-container featuredProducts">
         <h2 className="subtitle">Featured Products</h2>
         <div className="product-container">
