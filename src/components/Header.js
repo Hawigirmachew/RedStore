@@ -6,7 +6,7 @@ import { FaBars } from "react-icons/fa";
 // hook
 import { useRef } from "react";
 
-function Header() {
+function Header({cartItems}) {
   const navRef = useRef();
 
   const showaMenu = () => {
@@ -15,7 +15,7 @@ function Header() {
   return (
     <header className="container header">
       <Logo />
-      <Navbar  navRef={navRef} />
+      <Navbar  navRef={navRef} cartItems = {cartItems} />
       <button className="nav-btn nav-open-btn" onClick={showaMenu}>
         <FaBars />
       </button>

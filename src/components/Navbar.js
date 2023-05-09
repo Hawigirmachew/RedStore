@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import cart from '../assets/cart.png'
 // icon
-import { FaTimes } from "react-icons/fa";
-function Navbar({navRef}) {
-  const showMenu = () =>{
-    navRef.current.classList.toggle("responsive-nav");
-  }
+// import { FaTimes } from "react-icons/fa";
+function Navbar({navRef, cartItems}) {
+ 
   return (
     <nav ref={navRef}>
       <ul className="navList">
@@ -24,8 +22,9 @@ function Navbar({navRef}) {
         <li className="navItem">
           <Link to="/account">Account</Link>
         </li>
-        <li className="navItem">
-          <Link to="/cart"><img src={cart} alt="cart" className="add-cart-img" /></Link>
+        <li className="navItem add-cart">
+          <Link to="/cart"><img src={cart} alt="cart" className="add-cart-img" />
+          <span className="cart-length">{cartItems.length >= 1 && cartItems.length}</span></Link>
         </li>
         
       </ul>

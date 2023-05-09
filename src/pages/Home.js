@@ -15,7 +15,7 @@ function Home({ products,isLoading,handleAddToCart}) {
     <section>
       <div className="home">
       <div className="container row">
-        <article className="col col-1">
+        <div className="col col-1">
           <h1>
             Give your workout
             <br />A News Later
@@ -29,7 +29,7 @@ function Home({ products,isLoading,handleAddToCart}) {
           <Link to="/product" className="link">
             Explore Now <FaArrowRight />{" "}
           </Link>
-        </article>
+        </div>
         <div className="col col-2">
           <img src={banner} alt="banner" />
         </div>
